@@ -1,0 +1,44 @@
+{
+    "name": "WP",
+    "description": "WP Composer File",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpress",
+                "type": "webroot",
+                "version": "4.2.2",
+                "dist": {
+                    "type": "zip",
+                    "url": "https://github.com/WordPress/WordPress/archive/4.2.2.zip"
+                },
+                "require" : {
+                    "fancyguy/webroot-installer": "1.0.0"
+                }
+            }
+        }
+        
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "wordpress": "4.*",
+        "fancyguy/webroot-installer": "1.0.0"
+    },
+    "require-dev" : {
+        "wpackagist-plugin/log-deprecated-notices"              : "*",
+        "wpackagist-plugin/debug-bar" : "0.8.*",
+        "wpackagist-plugin/debug-bar-console"                   : "*"
+	    
+    },
+    "extra": {
+        "webroot-dir": "wordpress",
+        "webroot-package": "wordpress",
+        "installer-paths": {
+            "test/{$name}": ["nb/wordpres-tests"]
+        }
+    }
+}
